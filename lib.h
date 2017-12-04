@@ -11,8 +11,8 @@ class HelloWorld
         HelloWorld();
         HelloWorld(const char* hello, const char* world);
 
-        std::string hello();
-        std::string world();
+        std::string hello() const;
+        std::string world() const;
 
     private:
         std::string hello_;

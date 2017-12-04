@@ -13,12 +13,12 @@ HelloWorld::HelloWorld(const char* hello, const char* world)
     , world_(world)
 {}
 
-std::string HelloWorld::hello()
+std::string HelloWorld::hello() const
 {
     return hello_;
 }
 
-std::string HelloWorld::world()
+std::string HelloWorld::world() const
 {
     return world_;
 }
