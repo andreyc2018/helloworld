@@ -4,8 +4,15 @@
 
 BOOST_AUTO_TEST_CASE( hello_world )
 {
-    otus::HelloWorld test_object("qwerty", "йцукенг" );
+    otus::HelloWorld test_object("qwerty", "йцукенг");
 
     BOOST_CHECK_EQUAL(test_object.hello(), "qwerty");
     BOOST_CHECK_EQUAL(test_object.world(), "йцукенг");
+}
+
+BOOST_AUTO_TEST_CASE( hello_world_operator )
+{
+    otus::HelloWorld test_object("Привет,", "мир!");
+
+    BOOST_CHECK_EQUAL(test_object(), "Привет, мир!");
 }

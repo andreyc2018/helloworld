@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+set (helloworld_VERSION_MAJOR 1)
+set (helloworld_VERSION_MINOR 0)
+set (helloworld_VERSION_BUILD $ENV{TRAVIS_BUILD_NUMBER})
+
+project(helloworld VERSION ${helloworld_VERSION_MAJOR}.${helloworld_VERSION_MINOR}.${helloworld_VERSION_BUILD})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
 configure_file(version.h.in version.h)
+
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_executable(helloworld_cli main.cpp)
 
@@ -29,9 +35,11 @@ target_link_libraries(test_version ${Boost_LIBRARIES} helloworld)
 
 install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
 
-set(CPACK_GENERATOR DEB RPM)
+set(CPACK_GENERATOR DEB)
 
-set(CPACK_PACKAGE_VERSION_MAJOR )
+set(CPACK_PACKAGE_CONTACT "sysdos286@yahoo.com")
+set(CPACK_PACKAGE_VERSION_MAJOR ${helloworld_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${helloworld_VERSION_MINOR})
 
 include(CPack)
 

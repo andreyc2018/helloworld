@@ -1,10 +1,11 @@
 #include "lib.h"
 #include <iostream>
 
-int main(int, char**)
+int main(int argc, char** argv)
 {
-    std::cout << "HelloWorld version " << Version << "\n";
-    otus::HelloWorld hello_world("Привет,", "мир!");
-    std::cout << hello_world.hello() << " " << hello_world.world() << "\n";
+    if (argc > 1 && argv[1][0] == '-' && argv[1][1] == 'v')
+        std::cout << "HelloWorld version " << otus::HelloWorld::version() << "\n";
+    otus::HelloWorld hello_world;
+    std::cout << hello_world() << "\n";
     return 0;
 }
