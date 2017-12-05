@@ -13,7 +13,7 @@ const std::string& HelloWorld::version()
 
 HelloWorld::HelloWorld()
     : hello_("Hello,")
-    , world_("world!")
+    , world_("World!")
 {}
 
 HelloWorld::HelloWorld(const char* hello, const char* world)
