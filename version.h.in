@@ -1,3 +1,3 @@
 #pragma once
 
-#define VERSION  "@helloworld_VERSION_MAJOR@.@helloworld_VERSION_MINOR@.@helloworld_VERSION_BUILD@"
+#define VERSION  "@lesson_VERSION_MAJOR@.@lesson_VERSION_MINOR@.@lesson_VERSION_BUILD@"
